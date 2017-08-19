@@ -42,3 +42,13 @@ __Затем__
 ```
   start.bat
 ```
+## Тестовые аккаунты для входа
+```
+[{
+  login: 'firstUser'
+  password: 'firstUser'
+},{
+  login: 'secondUser'
+  password: 'secondUser'
+}]
+```
