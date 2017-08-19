@@ -1,0 +1,1 @@
+mongo < initDb.js

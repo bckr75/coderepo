@@ -1,0 +1,49 @@
+{
+    "name": "bckr75/coderepo",
+    "description": "Test code repo",
+    "type": "project",
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=5.4.0",
+        "yiisoft/yii2": ">=2.0.5",
+        "yiisoft/yii2-bootstrap": ">=2.0.0",
+        "yiisoft/yii2-twig": ">=2.0.0",
+        "yiisoft/yii2-mongodb": "^2.1"
+    },
+    "require-dev": {
+        "yiisoft/yii2-debug": ">=2.0.0",
+        "yiisoft/yii2-gii": ">=2.0.0",
+        "yiisoft/yii2-faker": ">=2.0.0"
+    },
+    "config": {
+        "process-timeout": 1800,
+        "fxp-asset":{
+            "installer-paths": {
+                "npm-asset-library": "vendor/npm",
+                "bower-asset-library": "vendor/bower"
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "app\\models\\code\\": "models/code",
+            "app\\models\\user\\": "models/user",
+            "app\\models\\tools\\": "models/tools"
+        }
+    },
+    "extra": {
+        "yii\\composer\\Installer::postCreateProject": {
+            "setPermission": [
+                {
+                    "runtime": "0777",
+                    "web/assets": "0777",
+                    "yii": "0755"
+                }
+            ],
+            "generateCookieValidationKey": [
+                "config/web.php"
+            ]
+        }
+    }
+}
