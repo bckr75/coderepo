@@ -10,6 +10,7 @@
   font-style: italic;
 }
 
+@gray: #edeef2;
 
 html,
 body {
@@ -139,8 +140,8 @@ a.desc:after {
   }
   &:not([data-readOnly=true]) {
     height: 500px;
-    border-right: 1px solid #edeef2;
-    border-bottom: 1px solid #edeef2;
+    border-right: 1px solid @gray;
+    border-bottom: 1px solid @gray;
   }
 }
 
@@ -158,6 +159,6 @@ a.desc:after {
 
 #editor {
   height: 500px;
-  border-right: 1px solid #edeef2;
-  border-bottom: 1px solid #edeef2;
+  border-right: 1px solid @gray;
+  border-bottom: 1px solid @gray;
 }

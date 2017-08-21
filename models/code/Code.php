@@ -39,7 +39,7 @@ class Code extends Object
     }
 
     /**
-     * Gets public code snippets
+     * Gets public code snippets, limited by 10 results.
      * @return array|null
      */
     public static function getPublicSnippets() {
@@ -64,6 +64,8 @@ class Code extends Object
     }
 
     /**
+     * Gets code snippets by user id, returns them cut by 100 characters.
+     *
      * @param User $user
      * @return array|null
      */

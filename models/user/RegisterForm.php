@@ -70,7 +70,9 @@ class RegisterForm extends Model
     }
 
     /**
-     * Sign up function
+     * Adds new user to collection users and, after that, user will be logged in.
+     * Password will be saved as bcrypt hash for security reasons.
+     * @return bool
      */
     public function register() {
         if($this->validate()) {

@@ -59,9 +59,10 @@ class AjaxController extends Controller
     }
 
     /**
-     * Add snippet.
+     * Add snippet. If successful - redirects back to main page,
+     * otherwise returns json encoded string with errors.
      *
-     * @return Response|string
+     * @return Response
      * @throws \Exception
      */
 

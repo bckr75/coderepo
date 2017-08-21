@@ -48,6 +48,8 @@ var editor, form,
         name: 'Shell',
         mode: 'sh'
     }];
+
+
 $(function () {
     $('.snippet').each(function () {
         var html = $("<textarea/>").html($(this).html()).val();
@@ -56,11 +58,12 @@ $(function () {
         editor.clearSelection();
         editor.setTheme("ace/theme/chrome");
         editor.getSession().setMode("ace/mode/" + $(this).attr('data-mode'));
-        if($(this).attr('data-readOnly')) {
+        if ($(this).attr('data-readOnly')) {
             editor.setReadOnly(true);
             editor.getSession().setUseWorker(false);
         }
     });
+
     $('#addCode').on('click', function (e) {
         e.preventDefault();
         if (!this.state) {
@@ -96,7 +99,7 @@ $(function () {
             form = $('#codeForm');
             form.on('submit', function (e) {
                 e.preventDefault();
-                if($(this).find('#errors')) {
+                if ($(this).find('#errors')) {
                     $(this).find('#errors').remove();
                 }
                 $.ajax({
@@ -112,7 +115,6 @@ $(function () {
                         if (res.error) {
                             form.append('<div class="error-summary" style="margin-top:10px;" id="errors"></div>');
                             $.each(res.error, function (index, item) {
-                                console.log(item);
                                 $('#errors').append(item);
                             });
                         }

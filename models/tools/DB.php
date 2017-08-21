@@ -16,10 +16,12 @@ class DB
     private static $_collections = ['users', 'snippets', 'test'];
 
     /**
-     * @param string $collection
-     * @param array|string $parameters
-     * @param int|null $limit
-     * @param int|null $order
+     * Selects records from collection.
+     *
+     * @param string $collection - collection to select from.
+     * @param array|string $parameters - parameters for where clause, e.g. ['id' => 1].
+     * @param int|null $limit - select limit.
+     * @param int|null $order - sort order.
      * @throws \Exception
      * @return array|null
      */
@@ -42,6 +44,14 @@ class DB
         return null;
     }
 
+    /**
+     * Gets last record id.
+     *
+     * @param string $collection
+     * @return int
+     * @throws \Exception
+     */
+
     public static function lastInsertId($collection) {
         if (!in_array($collection, self::$_collections)) {
             throw new \Exception("Collection doesn't exist: $collection");
@@ -53,8 +63,11 @@ class DB
     }
 
     /**
+     * Simply inserts record to collection.
+     *
      * @param string $collection
      * @param array $parameters
+     * @return void
      * @throws \Exception
      */
     public static function insert($collection, $parameters) {
@@ -76,11 +89,14 @@ class DB
     }
 
     /**
-     * @param string $collection
-     * @param array $fields
-     * @param int $limit
-     * @param array|null $matchArr
-     * @param int|null $order
+     * Runs aggregation in MongoDB.
+     *
+     * @param string $collection - collection to aggregate from
+     * @param array $fields - fields in array, [$field => array $cutSize(or boolean, if just return)], e.g:
+     * ['userId' => true, 'username' => [0, 4]]
+     * @param int $limit - limit returning result
+     * @param array|null $matchArr - WHERE clause
+     * @param int|null $order - sorting order
      * @return array
      * @throws \Exception
      */

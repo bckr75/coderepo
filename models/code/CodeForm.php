@@ -89,7 +89,9 @@ class CodeForm extends Model
     }
 
     /**
-     *  Adds user code snippet
+     *  Adds user code snippet, returns execution result(boolean)
+     *
+     * @return bool
      */
     public function addSnippet() {
         if ($this->validate()) {

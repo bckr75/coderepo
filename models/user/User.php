@@ -70,10 +70,10 @@ class User extends Object implements IdentityInterface
     }
 
     /**
-     * Validates password
+     * Validates password with password hash in database.
      *
-     * @param string $password password to validate
-     * @return bool if password provided is valid for current user
+     * @param string $password - password to validate
+     * @return bool - true if password provided is valid for current user, otherwise false.
      */
     public function validatePassword($password)
     {
