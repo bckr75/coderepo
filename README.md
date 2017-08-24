@@ -1,6 +1,4 @@
 ## ___English___
-<hr />
-
 # First attempts at Yii2, [Pastebin](https://pastebin.com/) analogue, using MongoDB as database.
 
 ## Installation
@@ -55,10 +53,8 @@ __And after that, run__
   password: 'secondUser'
 }]
 ```
-<hr />
 
 ## ___Русский___
-<hr />
 
 # Первое знакомство с Yii, аналог [Pastebin](https://pastebin.com/)
 
